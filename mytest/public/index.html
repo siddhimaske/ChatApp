@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WhatsApp Style Chat App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <header>
+        <h2>WhatsApp</h2>
+      </header>
+      <ul class="nav-tabs">
+        <li class="active" id="tab-chats">Chats</li>
+        <li id="tab-contacts">Contacts</li>
+        <li id="tab-settings">Settings</li>
+      </ul>
+      <div class="search-box">
+        <input type="text" id="search" placeholder="Search or start new chat" />
+      </div>
+      <ul id="user-list" class="user-list"></ul>
+    </nav>
+    <main class="chat-area">
+      <header class="chat-header">
+        <h3 id="chat-with">Select a user to chat</h3>
+      </header>
+      <div id="messages" class="messages"></div>
+      <div id="notification" class="notification"></div>
+      <form id="message-form" class="message-form">
+        <input id="message-input" autocomplete="off" placeholder="Type a message" />
+        <button type="submit">Send</button>
+      </form>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
