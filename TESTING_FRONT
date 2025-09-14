@@ -1,0 +1,61 @@
+# Frontend Manual Testing Instructions
+
+This document outlines thorough manual testing steps for the real-time chat application frontend.
+
+## Areas to Test
+
+1. **User Login**
+   - Open the app and verify the prompt for entering a username.
+   - Ensure empty names are rejected.
+   - Confirm a random avatar is assigned.
+
+2. **User List**
+   - Verify the user list displays all connected users except yourself.
+   - Check avatars and names are shown correctly.
+   - Test the search functionality filters users correctly.
+
+3. **Chat Interface**
+   - Select a user from the list and verify the chat header updates.
+   - Send messages and confirm they appear in the chat area.
+   - Receive messages from other users and verify display.
+   - Check message bubbles align correctly (sent vs received).
+   - Verify timestamps are shown.
+
+4. **Typing Indicator**
+   - When the other user is typing, verify the "User is typing..." indicator appears.
+   - Confirm the indicator disappears after typing stops or message is sent.
+
+5. **Tabs and Navigation**
+   - Test switching between Chats, Contacts, and Settings tabs.
+   - Verify the user list updates accordingly.
+   - Confirm search works in both Chats and Contacts tabs.
+
+6. **Notifications**
+   - Open multiple clients and verify join/leave notifications appear.
+   - Confirm notifications auto-dismiss after a few seconds.
+
+7. **UI Responsiveness**
+   - Resize the browser window and verify the layout adapts gracefully.
+   - Test on different screen sizes if possible.
+
+## Additional Notes
+
+- Open multiple browser windows or tabs to simulate multiple users.
+- Test sending messages between different users.
+- Observe real-time updates and UI behavior.
+
+---
+
+# Backend Manual Testing Instructions
+
+1. Start the server with `node server.js`.
+2. Verify the server starts without errors.
+3. Connect multiple clients and verify user connection and disconnection logs.
+4. Send messages between clients and confirm correct delivery.
+5. Test typing indicators and notifications.
+
+---
+
+# Summary
+
+Perform thorough manual testing covering all above areas to ensure the application works as expected end-to-end.
