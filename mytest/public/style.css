@@ -1,0 +1,278 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html, .container {
+  height: 100%;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 350px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar header h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #075e54;
+}
+
+.nav-tabs {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #075e54;
+  cursor: pointer;
+}
+
+.nav-tabs li {
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-tabs li.active,
+.nav-tabs li:hover {
+  background-color: #25d366;
+  color: white;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: #25d366;
+}
+
+/* User list */
+.user-list {
+  list-style: none;
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 5px;
+}
+
+.user-list li {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.user-list li:hover,
+.user-list li.active {
+  background-color: #e5ddd5;
+}
+
+.user-list img.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+  border: 2px solid #25d366;
+}
+
+.user-list .user-info {
+  flex-grow: 1;
+}
+
+.user-list .user-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.user-list .user-last-message {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Chat area */
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
+}
+
+.chat-header {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9fafb;
+}
+
+.message {
+  max-width: 60%;
+  margin-bottom: 15px;
+  padding: 12px 18px;
+  border-radius: 20px;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.message .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px;
+  left: -40px;
+  object-fit: cover;
+  border: 1.5px solid #3498db;
+}
+
+.message .username {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #2980b9;
+}
+
+.message .time {
+  font-size: 0.7rem;
+  color: #95a5a6;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+/* Message alignment */
+.message.sent {
+  background-color: #dcf8c6;
+  color: #000;
+  margin-left: auto;
+  border-bottom-right-radius: 5px;
+}
+
+.message.sent .avatar {
+  left: auto;
+  right: -40px;
+  border-color: #25d366;
+}
+
+.message.received {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 5px;
+}
+
+.notification {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #25d366;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  z-index: 10;
+  display: none;
+}
+
+/* Message form */
+.message-form {
+  display: flex;
+  padding: 15px 20px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.message-form input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.message-form input:focus {
+  border-color: #3498db;
+}
+
+.message-form button {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  margin-left: 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.message-form button:hover {
+  background-color: #2980b9;
+}
+
+/* Scrollbar styling */
+.user-list::-webkit-scrollbar,
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.user-list::-webkit-scrollbar-thumb,
+.messages::-webkit-scrollbar-thumb {
+  background-color: #bdc3c7;
+  border-radius: 3px;
+}
